@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
+import 'package:wb_app/models/workout.dart';
+import 'package:wb_app/screens/home/workout_tile.dart';
 
 class WorkoutList extends StatefulWidget {
   @override
@@ -10,12 +11,19 @@ class WorkoutList extends StatefulWidget {
 class _WorkoutListState extends State<WorkoutList> {
   @override
   Widget build(BuildContext context) {
-    final workoutInfo = Provider.of<QuerySnapshot>(context);
-    //print(workoutInfo.documents);
-    for (var doc in workoutInfo.documents) {
-      print(doc.data);
-    }
+    final workoutInfo = Provider.of<List<DbInfo>>(context);
 
-    return Container();
+    /*
+    workoutInfo.forEach((dbInfo) {
+      print(dbInfo.liftName);
+      print(dbInfo.repCount);
+    });
+    */
+    return ListView.builder(
+      itemCount: workoutInfo.length,
+      itemBuilder: (context, index) {
+        return WorkoutTile(dbInfo: workoutInfo[index]);
+      },
+    );
   }
 }

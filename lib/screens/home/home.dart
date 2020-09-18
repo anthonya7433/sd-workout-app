@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wb_app/models/workout.dart';
 import 'package:wb_app/services/auth.dart';
 import 'package:wb_app/services/database.dart';
 import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:wb_app/screens/home/workout_list.dart';
 
 class Home extends StatelessWidget {
@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot>.value(
+    return StreamProvider<List<DbInfo>>.value(
       value: DatabaseService().workoutInfo,
       child: Scaffold(
         backgroundColor: Colors.brown[50],

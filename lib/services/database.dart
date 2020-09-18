@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:wb_app/models/workout.dart';
 
 //Flutter&Firebase App Tutorial #16 - Firestore Database Setup
 class DatabaseService {
@@ -15,8 +16,17 @@ class DatabaseService {
     });
   }
 
+  //DbInfo from snapshot
+  List<DbInfo> _dbInfoFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc) {
+      return DbInfo(
+          liftName: doc.data['Training exercise'] ?? '',
+          repCount: doc.data['Reps'] ?? 0);
+    }).toList();
+  }
+
   // Get workout info stream
-  Stream<QuerySnapshot> get workoutInfo {
-    return workoutCollection.snapshots();
+  Stream<List<DbInfo>> get workoutInfo {
+    return workoutCollection.snapshots().map(_dbInfoFromSnapshot);
   }
 }
