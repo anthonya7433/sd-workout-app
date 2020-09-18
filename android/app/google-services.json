@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1014204198817",
+    "firebase_url": "https://workout-db-373d7.firebaseio.com",
+    "project_id": "workout-db-373d7",
+    "storage_bucket": "workout-db-373d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014204198817:android:a8ea0ae859a433c367a5e0",
+        "android_client_info": {
+          "package_name": "com.example.wb_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014204198817-6al7qgm98pop0bspl5a2q6r4dr2cnten.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH6EGYW6PPVRvPKdMxeH9e7pZFj53vdxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014204198817-6al7qgm98pop0bspl5a2q6r4dr2cnten.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
